@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include <QModbusRtuSerialMaster>
+#include <QModbusRtuSerialClient>
 #include <QModbusDevice>
 
 class ModbusManager : public QObject
@@ -15,11 +15,11 @@ public:
     void disconnectDevice();
     bool isConnected() const;
 
-    QModbusRtuSerialMaster* master() const { return m_modbusMaster; }
+    QModbusRtuSerialClient* master() const { return m_modbusMaster; }
 
 signals:
     void connectionStateChanged(bool connected);
 
 private:
-    QModbusRtuSerialMaster* m_modbusMaster = nullptr;
+    QModbusRtuSerialClient* m_modbusMaster = nullptr;
 };

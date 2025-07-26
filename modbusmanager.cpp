@@ -1,17 +1,19 @@
 #include "modbusmanager.h"
 #include <QSerialPort>
+#include <QVariant>
+
+class QVariant;
 
 ModbusManager::ModbusManager(QObject* parent)
     : QObject(parent)
 {
-    m_modbusMaster = new QModbusRtuSerialMaster(this);
+    m_modbusMaster = new QModbusRtuSerialClient(this);
 
-    // 可以设置主站的串口参数，这里默认COM3，8N1，9600波特率
-    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialPortNameParameter, "COM3");
-    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialParityParameter, QSerialPort::EvenParity);
-    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QSerialPort::Baud9600);
-    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QSerialPort::Data8);
-    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QSerialPort::OneStop);
+    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialPortNameParameter, QVariant("COM3"));
+    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialParityParameter, QVariant(QSerialPort::EvenParity));
+    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialBaudRateParameter, QVariant(QSerialPort::Baud9600));
+    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialDataBitsParameter, QVariant(QSerialPort::Data8));
+    m_modbusMaster->setConnectionParameter(QModbusDevice::SerialStopBitsParameter, QVariant(QSerialPort::OneStop));
 
     m_modbusMaster->setTimeout(1000);
     m_modbusMaster->setNumberOfRetries(3);

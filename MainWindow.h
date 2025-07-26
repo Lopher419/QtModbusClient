@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_MainWindow.h"
+#include "modbusmanager.h"
 
 class MainWindow : public QWidget
 {
@@ -13,4 +14,5 @@ public:
 
 private:
 	Ui::MainWindow ui;
+	ModbusManager* m_modbusManager;
 };
