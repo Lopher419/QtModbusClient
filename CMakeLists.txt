@@ -1,5 +1,7 @@
 ﻿# 声明可执行文件
 add_executable(ModbusQtTest1
+    modbusmanager.h
+    modbusmanager.cpp
     CoilTabWidget.cpp
     CoilTabWidget.h
     MainWindow.cpp

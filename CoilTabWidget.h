@@ -16,7 +16,7 @@ public:
 
 private slots:
     // 单线圈
-    void on_btnWriteSingleCoil_2_clicked();
+    void on_btnWriteSingleCoil_clicked();
     void on_btnReadSingleCoil_clicked();
     // 多线圈
     void on_btnWriteMultipleCoils_clicked();

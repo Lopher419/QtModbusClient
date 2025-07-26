@@ -32,7 +32,7 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="btnWriteSingleCoil_2">
+         <widget class="QPushButton" name="btnWriteSingleCoil">
           <property name="text">
            <string>WRITE</string>
           </property>
@@ -52,14 +52,14 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="labelWriteCoilAddress_2">
+         <widget class="QLabel" name="labelWriteCoilAddress">
           <property name="text">
            <string>指定地址：</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinboxWriteCoilAddress_2"/>
+         <widget class="QSpinBox" name="spinboxWriteCoilAddress"/>
         </item>
         <item>
          <spacer name="horizontalSpacer_4">
@@ -75,14 +75,14 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="labelWriteCoilState_2">
+         <widget class="QLabel" name="labelWriteCoilState">
           <property name="text">
            <string>数据：</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboboxWriteCoilState_2"/>
+         <widget class="QComboBox" name="comboboxWriteCoilState"/>
         </item>
        </layout>
       </widget>

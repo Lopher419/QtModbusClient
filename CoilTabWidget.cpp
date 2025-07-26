@@ -16,10 +16,10 @@ CoilTabWidget::CoilTabWidget(QWidget* parent)
     ui->tableReadCoilStates->setHorizontalHeaderLabels({ "地址", "状态" });
 
     // 写单线圈 combobox
-    ui->comboboxWriteCoilState_2->addItems({ "ON", "OFF" });
+    ui->comboboxWriteCoilState->addItems({ "ON", "OFF" });
 
     // 信号槽
-    connect(ui->btnWriteSingleCoil_2, &QPushButton::clicked, this, &CoilTabWidget::on_btnWriteSingleCoil_2_clicked);
+    connect(ui->btnWriteSingleCoil, &QPushButton::clicked, this, &CoilTabWidget::on_btnWriteSingleCoil_clicked);
     connect(ui->btnReadSingleCoil, &QPushButton::clicked, this, &CoilTabWidget::on_btnReadSingleCoil_clicked);
     connect(ui->btnWriteMultipleCoils, &QPushButton::clicked, this, &CoilTabWidget::on_btnWriteMultipleCoils_clicked);
     connect(ui->btnReadMultipleCoils, &QPushButton::clicked, this, &CoilTabWidget::on_btnReadMultipleCoils_clicked);
@@ -38,10 +38,10 @@ CoilTabWidget::~CoilTabWidget()
 }
 
 // 单线圈写
-void CoilTabWidget::on_btnWriteSingleCoil_2_clicked()
+void CoilTabWidget::on_btnWriteSingleCoil_clicked()
 {
-    int address = ui->spinboxWriteCoilAddress_2->value();
-    bool state = (ui->comboboxWriteCoilState_2->currentText() == "ON");
+    int address = ui->spinboxWriteCoilAddress->value();
+    bool state = (ui->comboboxWriteCoilState->currentText() == "ON");
     if (!modbusWriteSingleCoil(address, state))
         QMessageBox::warning(this, "写单线圈", "写入失败！");
 }

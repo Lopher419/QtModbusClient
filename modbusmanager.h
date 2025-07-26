@@ -1,12 +1,25 @@
 #pragma once
 
 #include <QObject>
+#include <QModbusRtuSerialMaster>
+#include <QModbusDevice>
 
-class modbusmanager : public QObject
+class ModbusManager : public QObject
 {
-	Q_OBJECT
-
+    Q_OBJECT
 public:
-	modbusmanager(QObject *parent);
-	~modbusmanager();
+    explicit ModbusManager(QObject* parent = nullptr);
+    ~ModbusManager();
+
+    bool connectDevice();
+    void disconnectDevice();
+    bool isConnected() const;
+
+    QModbusRtuSerialMaster* master() const { return m_modbusMaster; }
+
+signals:
+    void connectionStateChanged(bool connected);
+
+private:
+    QModbusRtuSerialMaster* m_modbusMaster = nullptr;
 };
