@@ -1,0 +1,54 @@
+# ------ 构建产物 ------
+[bB]uild/
+[Oo]ut/
+*.xcodeproj/
+*.vcxproj*
+*.sln
+*.user
+*.autosave
+
+# ------ CMake 生成文件 ------
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+[Mm]akefile
+cmake_install.cmake
+*.ninja*
+.ninja_log
+compile_commands.json
+
+# ------ Qt 自动生成文件 ------
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.moc
+
+# ------ 可执行文件 ------
+*.exe
+*.app
+*.dll
+*.so
+*.a
+*.lib
+*.pdb
+*.ilk
+
+# ------ IDE 配置文件 ------
+.vscode/
+.idea/
+*.code-workspace
+
+# ------ Visual Studio 文件 ------
+.vs/              
+*.suo
+*.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.VC.db
+*.opendb
+
+# ------ 系统文件 ------
+.DS_Store
+Thumbs.db
